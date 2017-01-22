@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Application</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main_container">
+        <h1 class="heading">Quiz Application</h1>
+        <hr id="hr_line">
+        <div class="quiz_container">
+            <div id="form_id">
+                <div id="question_div">
+                    <img id="question_image" src="images/question.png" width="30px" height="30px">
+                    <label id="question">There is a temperory Question Which You Are Seening ?</label>
+                </div>
+                <div id="option_container">
+                    <input type="radio" id="radio1" name="choice"><label id="option1"> TEMP 1</label>
+                    <br>
+                    <input type="radio" id="radio2" name="choice"><label id="option2"> TEMP 2</label>
+                    <br>
+                    <input type="radio" id="radio3" name="choice"><label id="option3"> TEMP 3</label>
+                    <br>
+                    <input type="radio" id="radio4" name="choice"><label id="option4"> TEMP 4</label>
+                    <br>
+                </div>
+                <button id="nextBtn" onclick="choiceQUestion()">Next</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>

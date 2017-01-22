@@ -1,0 +1,99 @@
+    .heading {
+        text-align: center;
+        font-size: 300%;
+        color: #ffffff;
+        /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;*/
+    }
+    /*.main_container {
+
+}*/
+    
+    .quiz_container {
+        width: 70%;
+        border: 2px solid white;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+        min-width: 40%;
+        max-width: 70%;
+        min-height: 100px;
+        max-height: 600px;
+        overflow: auto;
+        margin-bottom: 50px;
+    }
+    
+    #question_image {
+        min-width: 10px;
+        min-height: 10px;
+        max-width: 30px;
+        max-height: 30px;
+        position: relative;
+    }
+    
+    #hr_line {
+        height: 2px;
+        background: #ffffff;
+    }
+    
+    #question {
+        font-size: 22px;
+        color: white;
+        text-overflow: hidden;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        position: relative;
+    }
+    
+    #form_id {
+        padding: 20px;
+    }
+    
+    body {
+        background-image: url("images/background.jpg");
+        /*min-width: 30%;
+    max-width: 70%;*/
+        min-width: 50%;
+        min-height: 300px;
+    }
+    
+    #option_container {
+        padding-left: 03%;
+        margin-top: 60px;
+        font-size: 20px;
+        text-align: left;
+        color: white;
+        line-height: auto;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
+    #nextBtn {
+        /*position: absolute;*/
+        /*padding: 5px;*/
+        float: right;
+        width: auto;
+        height: auto;
+        font-family: tahoma;
+        margin-top: 11px;
+        margin-right: 2px;
+        position: inherit;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        background: rgb(28, 184, 65);
+        color: white;
+        border-radius: 9px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    #nextBtn:hover {
+        background: #7cfc3c;
+        background-image: -webkit-linear-gradient(top, #7cfc3c, #1cbf35);
+        background-image: -moz-linear-gradient(top, #7cfc3c, #1cbf35);
+        background-image: -ms-linear-gradient(top, #7cfc3c, #1cbf35);
+        background-image: -o-linear-gradient(top, #7cfc3c, #1cbf35);
+        background-image: linear-gradient(to bottom, #7cfc3c, #1cbf35);
+        text-decoration: none;
+        cursor: alias;
+    }
