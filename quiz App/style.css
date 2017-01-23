@@ -5,6 +5,12 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
     
+    .sub_Heading {
+        text-align: center;
+        color: #ffffff;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    
     .quiz_container {
         width: 70%;
         /*border: 2px solid white;*/
