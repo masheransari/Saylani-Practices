@@ -35,11 +35,62 @@ var marks = 0;
 
 function choiceQUestion() {
     if (count <= 10) {
+        submitAnswer();
         newQuestion();
     } else {
         console.log("in else Body");
     }
 }
+
+function getRadioCheckedValue(radio_name) {
+    var oRadio = document.forms[0].elements[radio_name];
+    for (var i = 0; i < oRadio.length; i++) {
+        if (oRadio[i].checked) {
+            return oRadio[i].value;
+        }
+    }
+    return '';
+}
+
+function checkedRadio() {
+    var whichRadioIsChecked = document.getElementsByName("choice");
+    var len = whichRadioIsChecked.len
+    for (var i = 0; i < len; i++) {
+        if (whichRadioIsChecked[i].checked) {
+            alert("answer = " + whichRadioIsChecked[i].value);
+            return whichRadioIsChecked[i].value;
+        }
+    }
+}
+
+function submitAnswer() {
+    //     var selectedRadio = document.getElementsByName("choice").value;
+    //     // alert(selectedRadio);
+    //     // document.getElementById('form_id').onsubmit = function() {
+    //     getRadioSelected('form_id', 'choice');
+    //     console.log(val);
+    //     // }
+    // var item = getRadioCheckedValue('choice');
+    // tempAnswer = checkedRadio();
+    // alert(tempAnswer);
+    if (tempAnswer == "" || tempAnswer == null) {
+        alert("Please Select the Option First..");
+    } else {
+        // alert(tempAnswer);
+    }
+}
+
+
+// function getRadioSelected(form, name) {
+//     var val;
+//     var radio = form.elements[name];
+//     for (var i = 0, len = radio.length; i < len; i++) {
+//         if (radio[i].checked) {
+//             // alert(radio[i].value);
+//             return radio[i].value;
+//         }
+//     }
+// }
 
 
 
