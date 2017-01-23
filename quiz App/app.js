@@ -19,46 +19,87 @@ function questionReload() {
 }
 
 questionReload();
-// for (var i = 0; i < 10; i++) {
-//     for (var j = 0; j < 7; j++) {
-//         console.log("data = " + questionArr[i][j]);
-//     }
-// }
+
 var count = 1;
 var randomNumber;
-
 var option1, option2, option3, option4;
 var radio1, radio2, radio3, radio4;
 var question;
-var tempAnswer;
+var tempAnswer, selectedAnswer;
 var marks = 0;
+
+newQuestion();
 
 function choiceQUestion() {
     if (count <= 10) {
-        submitAnswer();
-        newQuestion();
+        submitAns();
     } else {
         console.log("in else Body");
+        voidFields();
+        var btnText = document.getElementById('nextBtn').innerHTML;
+        // alert(btnText);
+        if (btnText === "Show Result") {
+            alert(marks);
+        }
     }
+}
+
+function voidFields() {
+    document.getElementById("question").innerHTML = "";
+
+    document.getElementById("option1").innerHTML = "";
+    document.getElementById("radio1").style.display = 'none';
+    document.getElementById("radio1").value = "";
+
+    document.getElementById("option2").innerHTML = "";
+    document.getElementById("radio2").value = "";
+    document.getElementById("radio2").style.display = 'none';
+
+    document.getElementById("option3").innerHTML = "";
+    document.getElementById("radio3").value = "";
+    document.getElementById("radio3").style.display = 'none';
+
+    document.getElementById("option4").innerHTML = "";
+    document.getElementById("radio4").value = "";
+    document.getElementById("radio4").style.display = 'none';
+    document.getElementById("question_image").style.display = 'none';
+    document.getElementById('nextBtn').innerHTML = "Show Result";
 }
 
 
 function checkedRadio() {
     var whichRadioIsChecked = document.getElementsByName("choice");
-    var len = whichRadioIsChecked.len
+    var len = whichRadioIsChecked.length;
     for (var i = 0; i < len; i++) {
         if (whichRadioIsChecked[i].checked) {
-            alert("answer = " + whichRadioIsChecked[i].value);
-            return whichRadioIsChecked[i].value;
+            // alert("answer = " + whichRadioIsChecked[i].value);
+            selectedAnswer = whichRadioIsChecked[i].value;
+            break;
         }
     }
 }
 
-function submitAnswer() {
-    if (tempAnswer == "" || tempAnswer == null) {
+function addEvent() {
+    // var newEvent = document.getElementsByTagName("radio");
+    for (var i = 1; i < 5; i++) {
+        var newEvent = document.getElementById("radio" + i);
+        console.log(newEvent);
+        newEvent.setAttribute("onClick", "checkedRadio()");
+    }
+}
+
+function submitAns() {
+    checkedRadio();
+    alert("SELECTEDaNSWER =" + selectedAnswer);
+    if (selectedAnswer == "" || selectedAnswer == null) {
         alert("Please Select the Option First..");
     } else {
-        // alert(tempAnswer);
+        // alert("submitAnswer = " + selectedAnswer);
+        if (selectedAnswer == tempAnswer) {
+            marks += 10;
+
+        }
+        newQuestion();
     }
 }
 
@@ -66,24 +107,29 @@ function submitAnswer() {
 
 
 function newQuestion() {
+    addEvent();
     randomNumber = Math.random() * id.length;
     randomNumber = Math.floor(randomNumber);
-    console.log(questionArr[randomNumber]);
+    // console.log(questionArr[randomNumber]);
 
     document.getElementById("question").innerHTML = questionArr[randomNumber][1];
+
     document.getElementById("option1").innerHTML = questionArr[randomNumber][2];
     document.getElementById("radio1").value = questionArr[randomNumber][2];
+
     document.getElementById("option2").innerHTML = questionArr[randomNumber][3];
     document.getElementById("radio2").value = questionArr[randomNumber][3];
+
     document.getElementById("option3").innerHTML = questionArr[randomNumber][4];
     document.getElementById("radio3").value = questionArr[randomNumber][4];
+
     document.getElementById("option4").innerHTML = questionArr[randomNumber][5];
     document.getElementById("radio4").value = questionArr[randomNumber][5];
     tempAnswer = questionArr[randomNumber][6];
 
 
     id.splice(randomNumber, 1);
-    alert(randomNumber);
+    // alert(randomNumber);
     questionArr.splice(randomNumber, 1);
 
     count++;
