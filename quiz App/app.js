@@ -34,15 +34,39 @@ function choiceQUestion() {
     if (count <= 10) {
         submitAns();
     } else {
-        console.log("in else Body");
+        // console.log("in else Body");
         voidFields();
         var btnText = document.getElementById('nextBtn').innerHTML;
         // alert(btnText);
         if (btnText === "Show Result") {
-            alert(marks);
+            // alert(marks);
+            document.getElementById('form_id').style.display = 'none';
+            if (marks >= 60 && marks <= 100) {
+                document.getElementById('resultImage').setAttribute("src", "images/congrats.gif");
+            } else {
+                document.getElementById('resultImage').setAttribute("src", "images/fail.png");
+            }
+            document.getElementById('resultImage').setAttribute("class", "resultImage_container");
         }
     }
 }
+
+// function showResult() {
+//     var image = document.createElement("img");
+//     // image
+//     if (marks >= 60 && marks <= 100) {
+//         image.setAttribute("src", "images/congrats.gif");
+//     } else {
+//         image.setAttribute("src", "images/fail.png");
+//     }
+//     // image.style.width = 'auto';
+//     // image.style.height = 'auto';
+//     var quiz = document.getElementById('quiz_container');
+//     console.log(image);
+//     console.log(document.getElementById('quiz_container'));
+//     // quiz.appendChild(image);
+
+// }
 
 function voidFields() {
     document.getElementById("question").innerHTML = "";
@@ -83,14 +107,14 @@ function addEvent() {
     // var newEvent = document.getElementsByTagName("radio");
     for (var i = 1; i < 5; i++) {
         var newEvent = document.getElementById("radio" + i);
-        console.log(newEvent);
+        // console.log(newEvent);
         newEvent.setAttribute("onClick", "checkedRadio()");
     }
 }
 
 function submitAns() {
     checkedRadio();
-    alert("SELECTEDaNSWER =" + selectedAnswer);
+    // alert("SELECTEDaNSWER =" + selectedAnswer);
     if (selectedAnswer == "" || selectedAnswer == null) {
         alert("Please Select the Option First..");
     } else {
