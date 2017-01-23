@@ -42,15 +42,6 @@ function choiceQUestion() {
     }
 }
 
-function getRadioCheckedValue(radio_name) {
-    var oRadio = document.forms[0].elements[radio_name];
-    for (var i = 0; i < oRadio.length; i++) {
-        if (oRadio[i].checked) {
-            return oRadio[i].value;
-        }
-    }
-    return '';
-}
 
 function checkedRadio() {
     var whichRadioIsChecked = document.getElementsByName("choice");
@@ -64,33 +55,12 @@ function checkedRadio() {
 }
 
 function submitAnswer() {
-    //     var selectedRadio = document.getElementsByName("choice").value;
-    //     // alert(selectedRadio);
-    //     // document.getElementById('form_id').onsubmit = function() {
-    //     getRadioSelected('form_id', 'choice');
-    //     console.log(val);
-    //     // }
-    // var item = getRadioCheckedValue('choice');
-    // tempAnswer = checkedRadio();
-    // alert(tempAnswer);
     if (tempAnswer == "" || tempAnswer == null) {
         alert("Please Select the Option First..");
     } else {
         // alert(tempAnswer);
     }
 }
-
-
-// function getRadioSelected(form, name) {
-//     var val;
-//     var radio = form.elements[name];
-//     for (var i = 0, len = radio.length; i < len; i++) {
-//         if (radio[i].checked) {
-//             // alert(radio[i].value);
-//             return radio[i].value;
-//         }
-//     }
-// }
 
 
 
@@ -112,11 +82,6 @@ function newQuestion() {
     tempAnswer = questionArr[randomNumber][6];
 
 
-    // console.log("count " + (count) + " and  size= " + questionArr.length + " and id = " + id.length);
-    // if (questionArr.length == 1) {
-    //     console.log("" + questionArr);
-    //     questionArr = [];
-    // }
     id.splice(randomNumber, 1);
     alert(randomNumber);
     questionArr.splice(randomNumber, 1);
