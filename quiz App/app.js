@@ -34,12 +34,9 @@ function choiceQUestion() {
     if (count <= 10) {
         submitAns();
     } else {
-        // console.log("in else Body");
         voidFields();
         var btnText = document.getElementById('nextBtn').innerHTML;
-        // alert(btnText);
         if (btnText === "Show Result") {
-            // alert(marks);
             document.getElementById('form_id').style.display = 'none';
             if (marks >= 60 && marks <= 100) {
                 document.getElementById('resultImage').setAttribute("src", "images/congrats.gif");
@@ -50,23 +47,6 @@ function choiceQUestion() {
         }
     }
 }
-
-// function showResult() {
-//     var image = document.createElement("img");
-//     // image
-//     if (marks >= 60 && marks <= 100) {
-//         image.setAttribute("src", "images/congrats.gif");
-//     } else {
-//         image.setAttribute("src", "images/fail.png");
-//     }
-//     // image.style.width = 'auto';
-//     // image.style.height = 'auto';
-//     var quiz = document.getElementById('quiz_container');
-//     console.log(image);
-//     console.log(document.getElementById('quiz_container'));
-//     // quiz.appendChild(image);
-
-// }
 
 function voidFields() {
     document.getElementById("question").innerHTML = "";
@@ -96,7 +76,6 @@ function checkedRadio() {
     var len = whichRadioIsChecked.length;
     for (var i = 0; i < len; i++) {
         if (whichRadioIsChecked[i].checked) {
-            // alert("answer = " + whichRadioIsChecked[i].value);
             selectedAnswer = whichRadioIsChecked[i].value;
             break;
         }
@@ -104,24 +83,19 @@ function checkedRadio() {
 }
 
 function addEvent() {
-    // var newEvent = document.getElementsByTagName("radio");
     for (var i = 1; i < 5; i++) {
         var newEvent = document.getElementById("radio" + i);
-        // console.log(newEvent);
         newEvent.setAttribute("onClick", "checkedRadio()");
     }
 }
 
 function submitAns() {
     checkedRadio();
-    // alert("SELECTEDaNSWER =" + selectedAnswer);
     if (selectedAnswer == "" || selectedAnswer == null) {
         alert("Please Select the Option First..");
     } else {
-        // alert("submitAnswer = " + selectedAnswer);
         if (selectedAnswer == tempAnswer) {
             marks += 10;
-
         }
         newQuestion();
     }
@@ -134,7 +108,6 @@ function newQuestion() {
     addEvent();
     randomNumber = Math.random() * id.length;
     randomNumber = Math.floor(randomNumber);
-    // console.log(questionArr[randomNumber]);
 
     document.getElementById("question").innerHTML = questionArr[randomNumber][1];
 
@@ -153,8 +126,6 @@ function newQuestion() {
 
 
     id.splice(randomNumber, 1);
-    // alert(randomNumber);
     questionArr.splice(randomNumber, 1);
-
     count++;
 }
